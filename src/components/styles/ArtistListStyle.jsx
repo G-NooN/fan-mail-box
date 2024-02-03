@@ -12,11 +12,6 @@ const ArtistsContainer = styled.ul`
   border-radius: 5px;
 `;
 
-const ArtistListTitle = styled.h2`
-  font-size: 20px;
-  font-weight: 900;
-`;
-
 const MaleArtist = styled.li`
   width: 160px;
   margin: 10px;
@@ -75,4 +70,4 @@ const FemaleArtist = styled.li`
   }
 `;
 
-export { ArtistsContainer, ArtistListTitle, MaleArtist, FemaleArtist };
+export { ArtistsContainer, MaleArtist, FemaleArtist };

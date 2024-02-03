@@ -1,9 +1,5 @@
-import {
-  ArtistsContainer,
-  ArtistListTitle,
-  MaleArtist,
-  FemaleArtist,
-} from "components/styles/ArtistListStyle";
+import { SectionTitle } from "components/styles/MainPageStyle";
+import { ArtistsContainer, MaleArtist, FemaleArtist } from "components/styles/ArtistListStyle";
 import { useState } from "react";
 
 const ArtistList = () => {
@@ -15,7 +11,7 @@ const ArtistList = () => {
 
   return (
     <>
-      <ArtistListTitle>Our Artists</ArtistListTitle>
+      <SectionTitle>Our Artists</SectionTitle>
       <ArtistsContainer onClick={onClickArtist}>
         <MaleArtist $activeArtist={activeArtist}>방현재</MaleArtist>
         <FemaleArtist $activeArtist={activeArtist}>장미</FemaleArtist>
