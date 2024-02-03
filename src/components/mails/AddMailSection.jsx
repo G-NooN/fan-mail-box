@@ -1,8 +1,8 @@
-import AddMailContainer from "components/styles/AddMailStyle";
+import AddMailContainer from "components/styles/AddMailSectionStyle";
 import ArtistList from "./ArtistList";
 import AddForm from "./AddForm";
 
-function AddMail() {
+function AddMailSection() {
   return (
     <AddMailContainer>
       <ArtistList />
@@ -11,4 +11,4 @@ function AddMail() {
   );
 }
 
-export default AddMail;
+export default AddMailSection;
