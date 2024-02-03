@@ -37,7 +37,7 @@ const Content = styled.p`
 
 const StrongText = styled.span`
   font-size: 30px;
-  color: blue;
+  color: rebeccapurple;
 `;
 
 export { HeaderContainer, Title, Content, StrongText };
