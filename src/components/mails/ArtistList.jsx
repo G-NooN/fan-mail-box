@@ -1,10 +1,7 @@
 import { SectionTitle } from "components/styles/MainPageStyle";
 import { ArtistsContainer, MaleArtist, FemaleArtist } from "components/styles/ArtistListStyle";
-import { useState } from "react";
 
-const ArtistList = () => {
-  const [activeArtist, setActiveArtist] = useState("방현재");
-
+const ArtistList = ({ activeArtist, setActiveArtist }) => {
   const onClickArtist = (event) => {
     setActiveArtist(event.target.innerText);
   };
