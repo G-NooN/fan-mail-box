@@ -1,4 +1,4 @@
-import { Content, HeaderContainer, StrongText, Title } from "components/style/HeaderStyle";
+import { Content, HeaderContainer, StrongText, Title } from "components/styles/HeaderStyle";
 
 const Header = () => {
   return (

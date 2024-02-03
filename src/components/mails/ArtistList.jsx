@@ -3,7 +3,7 @@ import {
   ArtistListTitle,
   MaleArtist,
   FemaleArtist,
-} from "components/style/ArtistListStyle";
+} from "components/styles/ArtistListStyle";
 import { useState } from "react";
 
 const ArtistList = () => {

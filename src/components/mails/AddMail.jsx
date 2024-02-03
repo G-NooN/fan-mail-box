@@ -1,4 +1,4 @@
-import AddMailContainer from "components/style/AddMailStyle";
+import AddMailContainer from "components/styles/AddMailStyle";
 import ArtistList from "./ArtistList";
 import AddForm from "./AddForm";
 
