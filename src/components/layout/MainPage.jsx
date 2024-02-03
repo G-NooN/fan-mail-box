@@ -1,6 +1,6 @@
-import MainPageContainer from "components/style/MainPageStyle";
-import AddMail from "components/mail/AddMail";
-import MailList from "components/mail/MailList";
+import MainPageContainer from "components/styles/MainPageStyle";
+import AddMail from "components/mails/AddMail";
+import MailList from "components/mails/MailList";
 
 const MainPage = () => {
   return (
