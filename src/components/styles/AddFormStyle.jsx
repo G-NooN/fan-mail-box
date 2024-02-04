@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Form = styled.form`
   display: flex;
@@ -47,38 +47,24 @@ const SelectField = styled.div`
     height: 30px;
     padding-left: 5px;
   }
-
-  & select option {
-    font-weight: 600;
-  }
 `;
 
-const MaleOption = styled.option`
-  color: dodgerblue;
-`;
-
-const FemaleOption = styled.option`
-  color: hotpink;
-`;
-
-const ButtonField = styled.div`
-  display: flex;
-  justify-content: flex-end;
-
-  & button {
-    width: 100px;
-    height: 40px;
-    font-size: 16px;
-    font-weight: 700;
-    background-color: powderblue;
-    border: 1px solid dodgerblue;
-    cursor: pointer;
-
-    &:hover {
-      background-color: lightblue;
-      transform: scale(1.05);
+const Option = styled.option`
+  font-weight: 600;
+  ${(option) => {
+    switch (option.value) {
+      case "장미":
+      case "장윤서":
+      case "박가현":
+        return css`
+          color: hotpink;
+        `;
+      default:
+        return css`
+          color: dodgerblue;
+        `;
     }
-  }
+  }}
 `;
 
-export { Form, InputLabel, InputField, SelectField, MaleOption, FemaleOption, ButtonField };
+export { Form, InputLabel, InputField, SelectField, Option };

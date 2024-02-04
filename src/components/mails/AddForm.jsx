@@ -1,13 +1,5 @@
-import { SectionTitle } from "components/styles/GlobalStyle";
-import {
-  Form,
-  InputLabel,
-  InputField,
-  SelectField,
-  MaleOption,
-  FemaleOption,
-  ButtonField,
-} from "components/styles/AddFormStyle";
+import { SectionTitle, ButtonField } from "components/styles/GlobalStyle";
+import { Form, InputLabel, InputField, SelectField, Option } from "components/styles/AddFormStyle";
 import { useRef, useState } from "react";
 import { v4 as idv4 } from "uuid";
 
@@ -41,17 +33,24 @@ const AddForm = ({ setMailList }) => {
       alert("내용은 최대 100자까지만 입력할 수 있습니다.");
       contentRef.current.focus();
       return;
+    } else {
+      const checkAddMail = window.confirm("등록하시겠습니까?");
+      if (checkAddMail) {
+        const newMail = {
+          id: idv4(),
+          nickname,
+          content,
+          avatar: "",
+          writedTo: receiver,
+          createdAt: new Date(),
+        };
+        setMailList((prevMailList) => [...prevMailList, newMail]);
+        alert("등록되었습니다.");
+        setNickname("");
+        setContent("");
+        setReceiver("");
+      } else return;
     }
-
-    const newMail = {
-      id: idv4(),
-      nickname,
-      content,
-      avatar: "",
-      writedTo: receiver,
-      createdAt: new Date(),
-    };
-    setMailList((prevMailList) => [...prevMailList, newMail]);
   };
 
   return (
@@ -90,22 +89,22 @@ const AddForm = ({ setMailList }) => {
             <option value={""}>선택</option>
             <hr />
             <optgroup label="매니저 (Manager)">
-              <MaleOption>방현재</MaleOption>
-              <FemaleOption>장미</FemaleOption>
-              <FemaleOption>장윤서</FemaleOption>
+              <Option value="방현재">방현재</Option>
+              <Option value="장미">장미</Option>
+              <Option value="장윤서">장윤서</Option>
             </optgroup>
             <optgroup label="튜터 (Tutor)">
-              <MaleOption>최원장</MaleOption>
-              <MaleOption>이재상</MaleOption>
-              <MaleOption>윤창식</MaleOption>
-              <MaleOption>권혁우</MaleOption>
-              <MaleOption>김병연</MaleOption>
-              <FemaleOption>박가현</FemaleOption>
+              <Option value="최원장">최원장</Option>
+              <Option value="이재상">이재상</Option>
+              <Option value="윤창식">윤창식</Option>
+              <Option value="권혁우">권혁우</Option>
+              <Option value="김병연">김병연</Option>
+              <Option value="박가현">박가현</Option>
             </optgroup>
           </select>
         </SelectField>
         <ButtonField>
-          <button>등록</button>
+          <button type="submit">등록</button>
         </ButtonField>
       </Form>
     </>

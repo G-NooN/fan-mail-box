@@ -1,24 +1,28 @@
 import { SectionTitle } from "components/styles/GlobalStyle";
-import { ArtistsContainer, MaleArtist, FemaleArtist } from "components/styles/ArtistListStyle";
+import { ArtistsContainer, Artist } from "components/styles/ArtistListStyle";
 
 const ArtistList = ({ activeArtist, setActiveArtist }) => {
   const onClickArtist = (event) => {
-    setActiveArtist(event.target.innerText);
+    if (event.target === event.currentTarget) {
+      return;
+    } else {
+      setActiveArtist(event.target.innerText);
+    }
   };
 
   return (
     <>
       <SectionTitle>Our Artists</SectionTitle>
       <ArtistsContainer onClick={onClickArtist}>
-        <MaleArtist $activeArtist={activeArtist}>방현재</MaleArtist>
-        <FemaleArtist $activeArtist={activeArtist}>장미</FemaleArtist>
-        <FemaleArtist $activeArtist={activeArtist}>장윤서</FemaleArtist>
-        <MaleArtist $activeArtist={activeArtist}>최원장</MaleArtist>
-        <MaleArtist $activeArtist={activeArtist}>이재상</MaleArtist>
-        <MaleArtist $activeArtist={activeArtist}>윤창식</MaleArtist>
-        <MaleArtist $activeArtist={activeArtist}>권혁우</MaleArtist>
-        <MaleArtist $activeArtist={activeArtist}>김병연</MaleArtist>
-        <FemaleArtist $activeArtist={activeArtist}>박가현</FemaleArtist>
+        <Artist $activeArtist={activeArtist}>방현재</Artist>
+        <Artist $activeArtist={activeArtist}>장미</Artist>
+        <Artist $activeArtist={activeArtist}>장윤서</Artist>
+        <Artist $activeArtist={activeArtist}>최원장</Artist>
+        <Artist $activeArtist={activeArtist}>이재상</Artist>
+        <Artist $activeArtist={activeArtist}>윤창식</Artist>
+        <Artist $activeArtist={activeArtist}>권혁우</Artist>
+        <Artist $activeArtist={activeArtist}>김병연</Artist>
+        <Artist $activeArtist={activeArtist}>박가현</Artist>
       </ArtistsContainer>
     </>
   );

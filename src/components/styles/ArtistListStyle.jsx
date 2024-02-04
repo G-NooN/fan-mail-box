@@ -12,16 +12,25 @@ const ArtistsContainer = styled.ul`
   border-radius: 5px;
 `;
 
-const MaleArtist = styled.li`
+const Artist = styled.li`
   width: 160px;
   margin: 10px;
   padding: 10px;
 
   ${(props) => {
     if (props.$activeArtist === props.children) {
-      return css`
-        background-color: aliceblue;
-      `;
+      switch (props.children) {
+        case "장미":
+        case "장윤서":
+        case "박가현":
+          return css`
+            background-color: lavenderblush;
+          `;
+        default:
+          return css`
+            background-color: aliceblue;
+          `;
+      }
     }
     return css`
       background-color: white;
@@ -32,42 +41,42 @@ const MaleArtist = styled.li`
   border-radius: 5px;
   text-align: center;
   font-weight: 700;
-  color: dodgerblue;
-  cursor: pointer;
-
-  &:hover {
-    background-color: aliceblue;
-    transform: scale(1.05);
-  }
-`;
-
-const FemaleArtist = styled.li`
-  width: 160px;
-  margin: 10px;
-  padding: 10px;
 
   ${(props) => {
-    if (props.$activeArtist === props.children) {
-      return css`
-        background-color: lavenderblush;
-      `;
+    switch (props.children) {
+      case "장미":
+      case "장윤서":
+      case "박가현":
+        return css`
+          color: hotpink;
+        `;
+      default:
+        return css`
+          color: dodgerblue;
+        `;
     }
-    return css`
-      background-color: white;
-    `;
   }}
-
-  border: 1px solid black;
-  border-radius: 5px;
-  text-align: center;
-  font-weight: 700;
-  color: hotpink;
   cursor: pointer;
+  transition: all 0.2s;
 
   &:hover {
-    background-color: lavenderblush;
+    ${(props) => {
+      switch (props.children) {
+        case "장미":
+        case "장윤서":
+        case "박가현":
+          return css`
+            background-color: lavenderblush;
+          `;
+        default:
+          return css`
+            background-color: aliceblue;
+          `;
+      }
+    }}
+
     transform: scale(1.05);
   }
 `;
 
-export { ArtistsContainer, MaleArtist, FemaleArtist };
+export { ArtistsContainer, Artist };
