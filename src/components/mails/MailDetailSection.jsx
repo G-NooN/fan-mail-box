@@ -41,7 +41,7 @@ const MailDetailSection = ({ id, foundMail }) => {
       return;
     } else {
       const newMailList = mailList.map((mail) => {
-        if (mail.id === id.id) {
+        if (mail.id === id) {
           const newMail = { ...mail, content: editedContent };
           return newMail;
         } else {
@@ -57,7 +57,7 @@ const MailDetailSection = ({ id, foundMail }) => {
   const deleteMail = () => {
     const checkDeleteMail = window.confirm("정말 삭제하시겠습니까?");
     if (checkDeleteMail) {
-      const newMailList = mailList.filter((mail) => mail.id !== id.id);
+      const newMailList = mailList.filter((mail) => mail.id !== id);
       setMailList(newMailList);
       alert("삭제되었습니다.");
       navigate("/");

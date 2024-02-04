@@ -7,8 +7,8 @@ import { CommonContext } from "context/CommonContext";
 
 const DetailPage = () => {
   const { mailList } = useContext(CommonContext);
-  const id = useParams();
-  const foundMail = mailList.find((mail) => mail.id === id.id);
+  const id = useParams().id;
+  const foundMail = mailList.find((mail) => mail.id === id);
   return (
     <PageContainer>
       <ArtistPhotoSection foundMail={foundMail} />
