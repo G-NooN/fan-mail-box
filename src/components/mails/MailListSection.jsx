@@ -1,4 +1,4 @@
-import { SectionContainer, SectionTitle } from "components/styles/MainPageStyle";
+import { SectionContainer, SectionTitle } from "components/styles/GlobalStyle";
 import { MailListContainer } from "components/styles/MailStyle";
 import Mail from "./Mail";
 

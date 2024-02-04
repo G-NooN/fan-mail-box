@@ -1,4 +1,4 @@
-import { SectionContainer } from "components/styles/MainPageStyle";
+import { SectionContainer } from "components/styles/GlobalStyle";
 import ArtistList from "./ArtistList";
 import AddForm from "./AddForm";
 

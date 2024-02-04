@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -64,4 +64,18 @@ code {
 }
 `;
 
-export default GlobalStyle;
+const PageContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
+
+const SectionContainer = styled.div`
+  margin: 20px;
+`;
+
+const SectionTitle = styled.h2`
+  font-size: 20px;
+  font-weight: 900;
+`;
+
+export { GlobalStyle, PageContainer, SectionContainer, SectionTitle };

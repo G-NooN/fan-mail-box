@@ -1,4 +1,4 @@
-import { SectionTitle } from "components/styles/MainPageStyle";
+import { SectionTitle } from "components/styles/GlobalStyle";
 import {
   Form,
   InputLabel,

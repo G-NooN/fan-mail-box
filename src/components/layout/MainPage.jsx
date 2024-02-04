@@ -1,4 +1,4 @@
-import { MainPageContainer } from "components/styles/MainPageStyle";
+import { PageContainer } from "components/styles/GlobalStyle";
 import AddMailSection from "components/mails/AddMailSection";
 import MailListSection from "components/mails/MailListSection";
 import { useState } from "react";
@@ -9,14 +9,14 @@ const MainPage = () => {
   const [mailList, setMailList] = useState(fakeData);
 
   return (
-    <MainPageContainer>
+    <PageContainer>
       <AddMailSection
         activeArtist={activeArtist}
         setActiveArtist={setActiveArtist}
         setMailList={setMailList}
       />
       <MailListSection activeArtist={activeArtist} mailList={mailList} />
-    </MainPageContainer>
+    </PageContainer>
   );
 };
 

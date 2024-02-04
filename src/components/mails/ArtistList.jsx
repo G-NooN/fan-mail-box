@@ -1,4 +1,4 @@
-import { SectionTitle } from "components/styles/MainPageStyle";
+import { SectionTitle } from "components/styles/GlobalStyle";
 import { ArtistsContainer, MaleArtist, FemaleArtist } from "components/styles/ArtistListStyle";
 
 const ArtistList = ({ activeArtist, setActiveArtist }) => {
