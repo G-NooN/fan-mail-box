@@ -1,7 +1,6 @@
 import { ActiveContext } from "context/ActiveContext";
 import { useContext } from "react";
-
-const { NoMailContainer } = require("components/styles/NoMailStyle");
+import { NoMailContainer } from "components/styles/NoMailStyle";
 
 const NoMail = () => {
   const { activeArtist } = useContext(ActiveContext);
