@@ -1,8 +1,11 @@
 import { Avatar, Nickname, WriterInfo } from "components/styles/GlobalStyle";
 import { MailContainer, MailInfo, MailContent } from "components/styles/MailStyle";
+import { CommonContext } from "context/CommonContext";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Mail = ({ mail, defaultAvatar, options }) => {
+const Mail = ({ mail }) => {
+  const { defaultAvatar, options } = useContext(CommonContext);
   const formattedDate = new Date(mail.createdAt).toLocaleDateString("ko-KR", options);
 
   const navigate = useNavigate();

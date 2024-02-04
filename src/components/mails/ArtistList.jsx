@@ -1,7 +1,10 @@
 import { SectionTitle } from "components/styles/GlobalStyle";
 import { ArtistsContainer, Artist } from "components/styles/ArtistListStyle";
+import { useContext } from "react";
+import { ActiveContext } from "context/ActiveContext";
 
-const ArtistList = ({ activeArtist, setActiveArtist }) => {
+const ArtistList = () => {
+  const { activeArtist, setActiveArtist } = useContext(ActiveContext);
   const onClickArtist = (event) => {
     if (event.target === event.currentTarget) {
       return;

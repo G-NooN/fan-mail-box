@@ -1,9 +1,11 @@
 import { SectionTitle, ButtonField } from "components/styles/GlobalStyle";
 import { Form, InputLabel, InputField, SelectField, Option } from "components/styles/AddFormStyle";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { v4 as idv4 } from "uuid";
+import { CommonContext } from "context/CommonContext";
 
-const AddForm = ({ setMailList }) => {
+const AddForm = () => {
+  const { setMailList } = useContext(CommonContext);
   const nicknameRef = useRef("");
   const contentRef = useRef("");
   const receiverRef = useRef("");

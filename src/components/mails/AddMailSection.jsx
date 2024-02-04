@@ -2,11 +2,11 @@ import { SectionContainer } from "components/styles/GlobalStyle";
 import ArtistList from "./ArtistList";
 import AddForm from "./AddForm";
 
-function AddMailSection({ activeArtist, setActiveArtist, setMailList }) {
+function AddMailSection() {
   return (
     <SectionContainer>
-      <ArtistList activeArtist={activeArtist} setActiveArtist={setActiveArtist} />
-      <AddForm setMailList={setMailList} />
+      <ArtistList />
+      <AddForm />
     </SectionContainer>
   );
 }

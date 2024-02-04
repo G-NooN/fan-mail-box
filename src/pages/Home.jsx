@@ -1,14 +1,9 @@
 import MainPage from "components/layout/MainPage";
 
-const Home = ({ defaultAvatar, mailList, setMailList, options }) => {
+const Home = () => {
   return (
     <>
-      <MainPage
-        defaultAvatar={defaultAvatar}
-        mailList={mailList}
-        setMailList={setMailList}
-        options={options}
-      />
+      <MainPage />
     </>
   );
 };
