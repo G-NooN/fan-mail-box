@@ -1,13 +1,12 @@
-import { PageContainer } from "components/styles/GlobalStyle";
+import { HomeButton, PageContainer } from "components/styles/GlobalStyle";
 import AddMailSection from "components/mails/AddMailSection";
 import MailListSection from "components/mails/MailListSection";
 import { useState } from "react";
-import fakeData from "fakeData.json";
+import { Link } from "react-router-dom";
 
-const MainPage = () => {
+const MainPage = ({ defaultAvatar, mailList, setMailList, options }) => {
   const [activeArtist, setActiveArtist] = useState("방현재");
-  const [mailList, setMailList] = useState(fakeData);
-
+  const filteredMailList = mailList.filter((mail) => mail.writedTo === activeArtist);
   return (
     <PageContainer>
       <AddMailSection
@@ -15,7 +14,15 @@ const MainPage = () => {
         setActiveArtist={setActiveArtist}
         setMailList={setMailList}
       />
-      <MailListSection activeArtist={activeArtist} mailList={mailList} />
+      <MailListSection
+        defaultAvatar={defaultAvatar}
+        activeArtist={activeArtist}
+        filteredMailList={filteredMailList}
+        options={options}
+      />
+      <Link to="/">
+        <HomeButton>HOME</HomeButton>
+      </Link>
     </PageContainer>
   );
 };

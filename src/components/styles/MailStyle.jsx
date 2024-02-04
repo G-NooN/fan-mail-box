@@ -23,31 +23,12 @@ const MailContainer = styled.li`
   }
 `;
 
-const Avatar = styled.figure`
-  width: 50px;
-  height: 50px;
-  margin: 10px;
-  border-radius: 50%;
-  overflow: hidden;
-
-  & img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-  }
-`;
-
 const MailInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 500px;
   margin: 15px 5px;
-`;
-
-const WriterInfo = styled.div`
-  display: flex;
-  gap: 10px;
 `;
 
 const MailContent = styled.p`
@@ -59,4 +40,4 @@ const MailContent = styled.p`
   overflow: hidden;
 `;
 
-export { MailListContainer, MailContainer, MailInfo, Avatar, WriterInfo, MailContent };
+export { MailListContainer, MailContainer, MailInfo, MailContent };

@@ -1,11 +1,14 @@
-import Header from "components/layout/Header";
 import MainPage from "components/layout/MainPage";
 
-const Home = () => {
+const Home = ({ defaultAvatar, mailList, setMailList, options }) => {
   return (
     <>
-      <Header />
-      <MainPage />
+      <MainPage
+        defaultAvatar={defaultAvatar}
+        mailList={mailList}
+        setMailList={setMailList}
+        options={options}
+      />
     </>
   );
 };

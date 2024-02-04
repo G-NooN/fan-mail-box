@@ -67,6 +67,7 @@ code {
 const PageContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
+  position: relative;
 `;
 
 const SectionContainer = styled.div`
@@ -78,4 +79,78 @@ const SectionTitle = styled.h2`
   font-weight: 900;
 `;
 
-export { GlobalStyle, PageContainer, SectionContainer, SectionTitle };
+const ButtonField = styled.div`
+  display: flex;
+  justify-content: flex-end;
+
+  & button {
+    width: 100px;
+    height: 40px;
+    margin: 0 5px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: powderblue;
+    border: 1px solid dodgerblue;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: lightblue;
+      transform: scale(1.05);
+    }
+  }
+`;
+
+const Avatar = styled.figure`
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+`;
+
+const Nickname = styled.span`
+  font-size: 20px;
+  font-weight: 700;
+`;
+
+const WriterInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+`;
+
+const HomeButton = styled.button`
+  position: absolute;
+  bottom: 40px;
+  right: 80px;
+  width: 80px;
+  height: 60px;
+  font-weight: 900;
+  font-size: 16px;
+  background-color: aliceblue;
+  cursor: pointer;
+
+  &:hover {
+    background-color: silver;
+  }
+`;
+
+export {
+  GlobalStyle,
+  PageContainer,
+  SectionContainer,
+  SectionTitle,
+  ButtonField,
+  Avatar,
+  Nickname,
+  WriterInfo,
+  HomeButton,
+};
