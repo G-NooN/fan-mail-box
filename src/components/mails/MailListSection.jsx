@@ -1,10 +1,9 @@
 import { SectionContainer, SectionTitle } from "components/styles/MainPageStyle";
 import { MailListContainer } from "components/styles/MailStyle";
-import fakeData from "fakeData.json";
 import Mail from "./Mail";
 
-const MailListSection = ({ activeArtist }) => {
-  const filteredMailList = fakeData.filter((mail) => mail.writedTo === activeArtist);
+const MailListSection = ({ activeArtist, mailList }) => {
+  const filteredMailList = mailList.filter((mail) => mail.writedTo === activeArtist);
 
   return (
     <SectionContainer>
