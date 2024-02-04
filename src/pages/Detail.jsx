@@ -1,14 +1,9 @@
 import DetailPage from "components/layout/DetailPage";
 
-const Detail = ({ defaultAvatar, mailList, setMailList, options }) => {
+const Detail = () => {
   return (
     <>
-      <DetailPage
-        defaultAvatar={defaultAvatar}
-        mailList={mailList}
-        setMailList={setMailList}
-        options={options}
-      />
+      <DetailPage />
     </>
   );
 };

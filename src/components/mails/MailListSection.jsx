@@ -3,17 +3,15 @@ import { MailListContainer } from "components/styles/MailStyle";
 import Mail from "./Mail";
 import NoMail from "./NoMail";
 
-const MailListSection = ({ defaultAvatar, activeArtist, filteredMailList, options }) => {
+const MailListSection = ({ filteredMailList }) => {
   return (
     <SectionContainer>
       <SectionTitle>Mail LIST</SectionTitle>
       <MailListContainer>
         {filteredMailList.length === 0 ? (
-          <NoMail activeArtist={activeArtist} />
+          <NoMail />
         ) : (
-          filteredMailList.map((mail) => (
-            <Mail key={mail.id} mail={mail} defaultAvatar={defaultAvatar} options={options} />
-          ))
+          filteredMailList.map((mail) => <Mail key={mail.id} mail={mail} />)
         )}
       </MailListContainer>
     </SectionContainer>

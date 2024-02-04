@@ -2,21 +2,17 @@ import { HomeButton, PageContainer } from "components/styles/GlobalStyle";
 import ArtistPhotoSection from "components/mails/ArtistPhotoSection";
 import MailDetailSection from "components/mails/MailDetailSection";
 import { Link, useParams } from "react-router-dom";
+import { useContext } from "react";
+import { CommonContext } from "context/CommonContext";
 
-const DetailPage = ({ defaultAvatar, mailList, setMailList, options }) => {
+const DetailPage = () => {
+  const { mailList } = useContext(CommonContext);
   const id = useParams();
   const foundMail = mailList.find((mail) => mail.id === id.id);
   return (
     <PageContainer>
       <ArtistPhotoSection foundMail={foundMail} />
-      <MailDetailSection
-        defaultAvatar={defaultAvatar}
-        mailList={mailList}
-        setMailList={setMailList}
-        id={id}
-        foundMail={foundMail}
-        options={options}
-      />
+      <MailDetailSection id={id} foundMail={foundMail} />
       <Link to="/">
         <HomeButton>HOME</HomeButton>
       </Link>

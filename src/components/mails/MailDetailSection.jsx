@@ -13,10 +13,12 @@ import {
   FullMailContent,
   EditMailArea,
 } from "components/styles/MailDetailStyle";
-import { useState } from "react";
+import { CommonContext } from "context/CommonContext";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const MailDetailSection = ({ defaultAvatar, mailList, setMailList, id, foundMail, options }) => {
+const MailDetailSection = ({ id, foundMail }) => {
+  const { defaultAvatar, mailList, setMailList, options } = useContext(CommonContext);
   const navigate = useNavigate();
   const [editMail, setEditMail] = useState(false);
   const [editedContent, setEditedContent] = useState("");
