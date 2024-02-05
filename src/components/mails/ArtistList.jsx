@@ -7,11 +7,8 @@ const ArtistList = () => {
   const activeArtist = useSelector((state) => state.activeArtist);
   const dispatch = useDispatch();
   const onClickArtist = (event) => {
-    if (event.target === event.currentTarget) {
-      return;
-    } else {
-      dispatch(setArtist(event.target.innerText));
-    }
+    if (event.target === event.currentTarget) return;
+    dispatch(setArtist(event.target.innerText));
   };
 
   return (
