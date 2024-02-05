@@ -1,15 +1,16 @@
 import { SectionTitle } from "components/styles/GlobalStyle";
 import { ArtistsContainer, Artist } from "components/styles/ArtistListStyle";
-import { useContext } from "react";
-import { ActiveContext } from "context/ActiveContext";
+import { useDispatch, useSelector } from "react-redux";
+import { setArtist } from "shared/redux/modules/activeArtist";
 
 const ArtistList = () => {
-  const { activeArtist, setActiveArtist } = useContext(ActiveContext);
+  const activeArtist = useSelector((state) => state.activeArtist);
+  const dispatch = useDispatch();
   const onClickArtist = (event) => {
     if (event.target === event.currentTarget) {
       return;
     } else {
-      setActiveArtist(event.target.innerText);
+      dispatch(setArtist(event.target.innerText));
     }
   };
 

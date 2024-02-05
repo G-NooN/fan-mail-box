@@ -2,11 +2,10 @@ import { HomeButton, PageContainer } from "components/styles/GlobalStyle";
 import ArtistPhotoSection from "components/mails/ArtistPhotoSection";
 import MailDetailSection from "components/mails/MailDetailSection";
 import { Link, useParams } from "react-router-dom";
-import { useContext } from "react";
-import { CommonContext } from "context/CommonContext";
+import { useSelector } from "react-redux";
 
 const DetailPage = () => {
-  const { mailList } = useContext(CommonContext);
+  const mailList = useSelector((state) => state.mailList);
   const id = useParams().id;
   const foundMail = mailList.find((mail) => mail.id === id);
   return (

@@ -1,9 +1,8 @@
-import { ActiveContext } from "context/ActiveContext";
-import { useContext } from "react";
 import { NoMailContainer } from "components/styles/NoMailStyle";
+import { useSelector } from "react-redux";
 
 const NoMail = () => {
-  const { activeArtist } = useContext(ActiveContext);
+  const activeArtist = useSelector((state) => state.activeArtist);
   return (
     <NoMailContainer>{activeArtist} 님에게 전달된 팬레터가 없어요 ㅠㅠㅠㅠㅠㅠ</NoMailContainer>
   );
