@@ -15,10 +15,12 @@ import {
 } from "components/styles/MailDetailStyle";
 import { CommonContext } from "context/CommonContext";
 import { useContext, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const MailDetailSection = ({ id, foundMail }) => {
-  const { defaultAvatar, mailList, setMailList, options } = useContext(CommonContext);
+  const dispatch = useDispatch();
+  const { defaultAvatar, options } = useContext(CommonContext);
   const navigate = useNavigate();
   const [editMail, setEditMail] = useState(false);
   const [editedContent, setEditedContent] = useState("");
@@ -40,15 +42,7 @@ const MailDetailSection = ({ id, foundMail }) => {
       alert("수정된 내용이 없습니다.");
       return;
     } else {
-      const newMailList = mailList.map((mail) => {
-        if (mail.id === id.id) {
-          const newMail = { ...mail, content: editedContent };
-          return newMail;
-        } else {
-          return mail;
-        }
-      });
-      setMailList(newMailList);
+      dispatch(editMail({ id, editedContent }));
       alert("수정되었습니다.");
       setEditMail(false);
       setEditedContent("");
@@ -57,8 +51,7 @@ const MailDetailSection = ({ id, foundMail }) => {
   const deleteMail = () => {
     const checkDeleteMail = window.confirm("정말 삭제하시겠습니까?");
     if (checkDeleteMail) {
-      const newMailList = mailList.filter((mail) => mail.id !== id.id);
-      setMailList(newMailList);
+      dispatch(deleteMail(id));
       alert("삭제되었습니다.");
       navigate("/");
     } else return;

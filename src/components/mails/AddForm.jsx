@@ -1,11 +1,12 @@
 import { SectionTitle, ButtonField } from "components/styles/GlobalStyle";
 import { Form, InputLabel, InputField, SelectField, Option } from "components/styles/AddFormStyle";
-import { useContext, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { v4 as idv4 } from "uuid";
-import { CommonContext } from "context/CommonContext";
+import { useDispatch } from "react-redux";
+import { addMail } from "shared/redux/modules/mailList";
 
 const AddForm = () => {
-  const { setMailList } = useContext(CommonContext);
+  const dispatch = useDispatch();
   const nicknameRef = useRef("");
   const contentRef = useRef("");
   const receiverRef = useRef("");
@@ -46,7 +47,7 @@ const AddForm = () => {
           writedTo: receiver,
           createdAt: new Date(),
         };
-        setMailList((prevMailList) => [...prevMailList, newMail]);
+        dispatch(addMail(newMail));
         alert("등록되었습니다.");
         setNickname("");
         setContent("");

@@ -3,7 +3,6 @@ import { MailContainer, MailInfo, MailContent } from "components/styles/MailStyl
 import { CommonContext } from "context/CommonContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-
 const Mail = ({ mail }) => {
   const { defaultAvatar, options } = useContext(CommonContext);
   const formattedDate = new Date(mail.createdAt).toLocaleDateString("ko-KR", options);
