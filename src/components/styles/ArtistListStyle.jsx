@@ -12,6 +12,21 @@ const ArtistsContainer = styled.ul`
   border-radius: 5px;
 `;
 
+const setArtistBackground = (artistName) => {
+  switch (artistName) {
+    case "장미":
+    case "장윤서":
+    case "박가현":
+      return css`
+        background-color: lavenderblush;
+      `;
+    default:
+      return css`
+        background-color: aliceblue;
+      `;
+  }
+};
+
 const Artist = styled.li`
   width: 160px;
   margin: 10px;
@@ -19,18 +34,7 @@ const Artist = styled.li`
 
   ${(props) => {
     if (props.$activeArtist === props.children) {
-      switch (props.children) {
-        case "장미":
-        case "장윤서":
-        case "박가현":
-          return css`
-            background-color: lavenderblush;
-          `;
-        default:
-          return css`
-            background-color: aliceblue;
-          `;
-      }
+      return setArtistBackground(props.children);
     }
     return css`
       background-color: white;
@@ -61,18 +65,7 @@ const Artist = styled.li`
 
   &:hover {
     ${(props) => {
-      switch (props.children) {
-        case "장미":
-        case "장윤서":
-        case "박가현":
-          return css`
-            background-color: lavenderblush;
-          `;
-        default:
-          return css`
-            background-color: aliceblue;
-          `;
-      }
+      return setArtistBackground(props.children);
     }}
 
     transform: scale(1.05);
