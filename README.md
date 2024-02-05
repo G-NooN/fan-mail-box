@@ -36,12 +36,10 @@
 ### 세부 컴포넌트 구조
 
 - AddForm
-
   - InputField : 닉네임
   - InputField : 내용
   - SelectField : 받는 사람
   - ButtonField : [등록] 버튼
-
 - MailDetailSection
   - WriterInfoSection : 작성자 정보
     - Avatar : 아바타
