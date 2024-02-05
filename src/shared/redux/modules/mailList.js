@@ -1,8 +1,8 @@
 import fakeData from "fakeData.json";
 
 const ADD_MAIL = "mail/ADD_MAIL";
-const EDIT_MAIL = "mail/EDIT_MAIL";
-const DELETE_MAIL = "mail/DELETE_MAIL";
+const UPDATE_MAIL = "mail/UPDATE_MAIL";
+const REMOVE_MAIL = "mail/REMOVE_MAIL";
 
 export const addMail = (payload) => {
   return {
@@ -10,15 +10,15 @@ export const addMail = (payload) => {
     payload,
   };
 };
-export const editMail = (payload) => {
+export const updateMail = (payload) => {
   return {
-    type: EDIT_MAIL,
+    type: UPDATE_MAIL,
     payload,
   };
 };
-export const deleteMail = (payload) => {
+export const removeMail = (payload) => {
   return {
-    type: DELETE_MAIL,
+    type: REMOVE_MAIL,
     payload,
   };
 };
@@ -31,10 +31,10 @@ const mailList = (state = initialState, action) => {
       const newMail = action.payload;
       return [...state, newMail];
     }
-    case EDIT_MAIL: {
-      const { mailId, editedContent } = action.payload;
+    case UPDATE_MAIL: {
+      const { id, editedContent } = action.payload;
       return state.map((mail) => {
-        if (mail.id === mailId) {
+        if (mail.id === id) {
           const newMail = { ...mail, content: editedContent };
           return newMail;
         } else {
@@ -42,9 +42,9 @@ const mailList = (state = initialState, action) => {
         }
       });
     }
-    case DELETE_MAIL: {
-      const mailId = action.payload;
-      return state.filter((mail) => mail.id !== mailId);
+    case REMOVE_MAIL: {
+      const id = action.payload;
+      return state.filter((mail) => mail.id !== id);
     }
     default:
       return state;

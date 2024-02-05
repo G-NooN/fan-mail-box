@@ -17,6 +17,7 @@ import { CommonContext } from "context/CommonContext";
 import { useContext, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { removeMail, updateMail } from "shared/redux/modules/mailList";
 
 const MailDetailSection = ({ id, foundMail }) => {
   const dispatch = useDispatch();
@@ -42,7 +43,7 @@ const MailDetailSection = ({ id, foundMail }) => {
       alert("수정된 내용이 없습니다.");
       return;
     } else {
-      dispatch(editMail({ id, editedContent }));
+      dispatch(updateMail({ id, editedContent }));
       alert("수정되었습니다.");
       setEditMail(false);
       setEditedContent("");
@@ -51,7 +52,7 @@ const MailDetailSection = ({ id, foundMail }) => {
   const deleteMail = () => {
     const checkDeleteMail = window.confirm("정말 삭제하시겠습니까?");
     if (checkDeleteMail) {
-      dispatch(deleteMail(id));
+      dispatch(removeMail(id));
       alert("삭제되었습니다.");
       navigate("/");
     } else return;
