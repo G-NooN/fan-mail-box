@@ -19,40 +19,35 @@ const AddForm = () => {
     event.preventDefault();
     if (!nickname) {
       alert("닉네임을 입력해주세요.");
-      nicknameRef.current.focus();
-      return;
+      return nicknameRef.current.focus();
     } else if (!content) {
       alert("내용을 입력해주세요.");
-      contentRef.current.focus();
-      return;
+      return contentRef.current.focus();
     } else if (!receiver) {
       alert("받는 사람을 선택해주세요.");
-      receiverRef.current.focus();
+      return receiverRef.current.focus();
     } else if (nickname.length > 20) {
       alert("닉네임은 최대 20자까지만 입력할 수 있습니다.");
-      nicknameRef.current.focus();
-      return;
+      return nicknameRef.current.focus();
     } else if (content.length > 100) {
       alert("내용은 최대 100자까지만 입력할 수 있습니다.");
-      contentRef.current.focus();
-      return;
+      return contentRef.current.focus();
     } else {
       const checkAddMail = window.confirm("등록하시겠습니까?");
-      if (checkAddMail) {
-        const newMail = {
-          id: idv4(),
-          nickname,
-          content,
-          avatar: "",
-          writedTo: receiver,
-          createdAt: new Date(),
-        };
-        dispatch(addMail(newMail));
-        alert("등록되었습니다.");
-        setNickname("");
-        setContent("");
-        setReceiver("");
-      } else return;
+      if (!checkAddMail) return;
+      const newMail = {
+        id: idv4(),
+        nickname,
+        content,
+        avatar: "",
+        writedTo: receiver,
+        createdAt: new Date(),
+      };
+      dispatch(addMail(newMail));
+      alert("등록되었습니다.");
+      setNickname("");
+      setContent("");
+      setReceiver("");
     }
   };
 
