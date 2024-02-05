@@ -1,7 +1,7 @@
 import { SectionContainer, SectionTitle } from "components/styles/GlobalStyle";
 import { MailListContainer } from "components/styles/MailStyle";
-import Mail from "./Mail";
-import NoMail from "./NoMail";
+import Mail from "components/mails/Mail";
+import NoMail from "components/mails/NoMail";
 
 const MailListSection = ({ filteredMailList }) => {
   return (

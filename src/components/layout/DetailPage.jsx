@@ -1,6 +1,6 @@
 import { HomeButton, PageContainer } from "components/styles/GlobalStyle";
-import ArtistPhotoSection from "components/mails/ArtistPhotoSection";
-import MailDetailSection from "components/mails/MailDetailSection";
+import ArtistPhotoSection from "components/layout/ArtistPhotoSection";
+import MailDetailSection from "components/layout/MailDetailSection";
 import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 

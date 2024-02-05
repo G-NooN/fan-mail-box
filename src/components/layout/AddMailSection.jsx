@@ -1,6 +1,6 @@
 import { SectionContainer } from "components/styles/GlobalStyle";
-import ArtistList from "./ArtistList";
-import AddForm from "./AddForm";
+import ArtistList from "components/mails/ArtistList";
+import AddForm from "components/mails/AddForm";
 
 function AddMailSection() {
   return (
