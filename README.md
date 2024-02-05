@@ -1,5 +1,12 @@
 # React로 Fan Mail Box 만들기
 
+## 적용 SKILL
+
+- styled-component
+- prop-drilling
+- context API
+- redux
+
 ## 컴포넌트 구조
 
 **App.jsx**
