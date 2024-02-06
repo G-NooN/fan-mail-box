@@ -32,6 +32,7 @@
 - DetailPage
   - ArtistPhotoSection : 아티스트 사진 Section
   - MailDetailSection : 메일 상세 정보 Section
+    - MailDetail : 메일 상세 정보
 
 ### 세부 컴포넌트 구조
 
@@ -40,13 +41,13 @@
   - InputField : 내용
   - SelectField : 받는 사람
   - ButtonField : [등록] 버튼
-- MailDetailSection
-  - WriterInfoSection : 작성자 정보
+- MailDetail
+  - WriterInfoContainer : 작성자 정보
     - Avatar : 아바타
     - WriterInfo
       - Nickname : 닉네임
       - Date : 날짜
-  - ReceiverInfoSection : 받는 사람
+  - ReceiverInfoContainer : 받는 사람
   - FullMailContent / EditMailArea : 내용 / 내용 수정
   - ButtonField
     - FullMailContent : 수정 / 삭제
