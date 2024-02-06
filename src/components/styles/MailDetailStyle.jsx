@@ -12,12 +12,12 @@ const MailDetailContainer = styled.div`
   border-radius: 5px;
 `;
 
-const WriterInfoSection = styled.div`
+const WriterInfoContainer = styled.div`
   display: flex;
   gap: 5px;
 `;
 
-const ReceiverInfoSection = styled.div`
+const ReceiverInfoContainer = styled.div`
   display: flex;
   margin: 0 10px;
   padding: 5px;
@@ -50,8 +50,8 @@ const EditMailArea = styled.textarea`
 
 export {
   MailDetailContainer,
-  WriterInfoSection,
-  ReceiverInfoSection,
+  WriterInfoContainer,
+  ReceiverInfoContainer,
   FullMailContent,
   EditMailArea,
 };

@@ -1,8 +1,8 @@
 import { ButtonField, Avatar, Nickname, WriterInfo } from "components/styles/GlobalStyle";
 import {
   MailDetailContainer,
-  WriterInfoSection,
-  ReceiverInfoSection,
+  WriterInfoContainer,
+  ReceiverInfoContainer,
   FullMailContent,
   EditMailArea,
 } from "components/styles/MailDetailStyle";
@@ -51,7 +51,7 @@ const MailDetail = ({ id, foundMail }) => {
 
   return (
     <MailDetailContainer>
-      <WriterInfoSection>
+      <WriterInfoContainer>
         <Avatar>
           <img src={foundMail.avatar || defaultAvatar} alt="avatar" />
         </Avatar>
@@ -59,8 +59,8 @@ const MailDetail = ({ id, foundMail }) => {
           <Nickname>{foundMail.nickname}</Nickname>
           <time>{formattedDate}</time>
         </WriterInfo>
-      </WriterInfoSection>
-      <ReceiverInfoSection>To. {foundMail.writedTo}</ReceiverInfoSection>
+      </WriterInfoContainer>
+      <ReceiverInfoContainer>To. {foundMail.writedTo}</ReceiverInfoContainer>
       {editMail ? (
         <>
           <EditMailArea
