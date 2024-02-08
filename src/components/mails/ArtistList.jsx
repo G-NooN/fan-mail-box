@@ -4,6 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { setArtist } from "shared/redux/modules/activeArtist";
 
 const ArtistList = () => {
+  const artistList = [
+    "방현재",
+    "장미",
+    "장윤서",
+    "최원장",
+    "이재상",
+    "윤창식",
+    "권혁우",
+    "김병연",
+    "박가현",
+  ];
+
   const activeArtist = useSelector((state) => state.activeArtist);
   const dispatch = useDispatch();
   const onClickArtist = (event) => {
@@ -15,15 +27,9 @@ const ArtistList = () => {
     <>
       <SectionTitle>Our Artists</SectionTitle>
       <ArtistsContainer onClick={onClickArtist}>
-        <Artist $activeArtist={activeArtist}>방현재</Artist>
-        <Artist $activeArtist={activeArtist}>장미</Artist>
-        <Artist $activeArtist={activeArtist}>장윤서</Artist>
-        <Artist $activeArtist={activeArtist}>최원장</Artist>
-        <Artist $activeArtist={activeArtist}>이재상</Artist>
-        <Artist $activeArtist={activeArtist}>윤창식</Artist>
-        <Artist $activeArtist={activeArtist}>권혁우</Artist>
-        <Artist $activeArtist={activeArtist}>김병연</Artist>
-        <Artist $activeArtist={activeArtist}>박가현</Artist>
+        {artistList.map((artist) => (
+          <Artist $activeArtist={activeArtist}>{artist}</Artist>
+        ))}
       </ArtistsContainer>
     </>
   );
